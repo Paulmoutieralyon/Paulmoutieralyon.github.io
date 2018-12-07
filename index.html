@@ -1,37 +1,331 @@
-## Welcome to GitHub Pages
+<!DOCTYPE html>
+<html lang="en" class="no-js">
 
-You can use the [editor on GitHub](https://github.com/Paulmoutieralyon/Paulmoutieralyon.github.io/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>For You</title>
+	<meta name="description" content="An Advent calendar made of 3D cubes with different styles and effects." />
+	<meta name="keywords" content="advent calendar, web, html template, 3d, cubes, css, javascript, anime.js" />
+	<meta name="author" content="Codrops" />
+	<link rel="shortcut icon" href="favicon.ico">
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700|BioRhyme:400,700" rel="stylesheet" />
+	<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+	<link rel="stylesheet" type="text/css" href="css/common.css" />
+	<link rel="stylesheet" type="text/css" href="css/style3.css" />
+	<!--[if IE]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+	<script>document.documentElement.className = 'js';</script>
+</head>
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+<body>
+	<svg class="hidden">
+		<defs>
+			<symbol id="icon-arrow" viewBox="0 0 24 24">
+				<title>arrow</title>
+				<polygon points="6.3,12.8 20.9,12.8 20.9,11.2 6.3,11.2 10.2,7.2 9,6 3.1,12 9,18 10.2,16.8 " />
+			</symbol>
+			<symbol id="icon-drop" viewBox="0 0 24 24">
+				<title>drop</title>
+				<path d="M12,21c-3.6,0-6.6-3-6.6-6.6C5.4,11,10.8,4,11.4,3.2C11.6,3.1,11.8,3,12,3s0.4,0.1,0.6,0.3c0.6,0.8,6.1,7.8,6.1,11.2C18.6,18.1,15.6,21,12,21zM12,4.8c-1.8,2.4-5.2,7.4-5.2,9.6c0,2.9,2.3,5.2,5.2,5.2s5.2-2.3,5.2-5.2C17.2,12.2,13.8,7.3,12,4.8z" />
+				<path d="M12,18.2c-0.4,0-0.7-0.3-0.7-0.7s0.3-0.7,0.7-0.7c1.3,0,2.4-1.1,2.4-2.4c0-0.4,0.3-0.7,0.7-0.7c0.4,0,0.7,0.3,0.7,0.7C15.8,16.5,14.1,18.2,12,18.2z" />
+			</symbol>
+			<symbol id="icon-github" viewBox="0 0 32.58 31.77">
+				<title>github</title>
+				<path d="M16.29,0a16.29,16.29,0,0,0-5.15,31.75c.81.15,1.11-.35,1.11-.79s0-1.41,0-2.77C7.7,29.18,6.74,26,6.74,26a4.31,4.31,0,0,0-1.81-2.38c-1.48-1,.11-1,.11-1a3.42,3.42,0,0,1,2.5,1.68,3.47,3.47,0,0,0,4.74,1.35,3.48,3.48,0,0,1,1-2.18C9.7,23.08,5.9,21.68,5.9,15.44a6.3,6.3,0,0,1,1.68-4.37,5.86,5.86,0,0,1,.16-4.31s1.37-.44,4.48,1.67a15.44,15.44,0,0,1,8.16,0c3.11-2.11,4.48-1.67,4.48-1.67A5.85,5.85,0,0,1,25,11.07a6.29,6.29,0,0,1,1.67,4.37c0,6.26-3.81,7.63-7.44,8a3.89,3.89,0,0,1,1.11,3c0,2.18,0,3.93,0,4.47s.29.94,1.12.78A16.29,16.29,0,0,0,16.29,0Z" />
+			</symbol>
+		</defs>
+	</svg>
+	<main>
+		<header class="codrops-header">
+			<div class="codrops-header__main">
+				<div class="codrops-links">
 
-### Markdown
+					<a class="codrops-icon codrops-icon--drop" title="Back to the article"><svg class="icon icon--drop">
+							<use xlink:href="#icon-drop"></use>
+						</svg></a>
+				</div>
+				<h1 class="codrops-header__title">For you Grace </h1>
+			</div>
+			<p class="codrops-header__tagline">A ouvrir chaque jours ! </p>
+			<nav class="codrops-demos">
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+				<a class="link current-demo" >For chrismas</a>
+			</nav>
+			<a href="https://github.com/Paulmoutieralyon/calender-event-.git" title="View this project on GitHub"><svg class="icon icon--github">
+					<use xlink:href="#icon-github"></use>
+				</svg></a>
+		</header>
 
-```markdown
-Syntax highlighted code block
+		<div id="compte_a_rebours"><noscript>Fin le 28 décembre 2018</noscript></div>
+		<script type="text/javascript">
+			function compte_a_rebours() {
+				let compte_a_rebours = document.getElementById("compte_a_rebours");
+				let date_actuelle = new Date();
+				let date_evenement = new Date ("Dec 28 00:00:00 2018");
+				let total_secondes = (date_evenement - date_actuelle) /1000;
+				let prefixe  =  "Retrouvailles dans ";
+				if (total_secondes < 0 )
+					{
+						prefixe = "compte à rebours terminé il y a";
+						total_secondes = Math.abs(total_secondes);
+					}
+				if (total_secondes > 0)
+				{
+					let jours = Math.floor (total_secondes / (60 * 60 * 24));
+					let heures = Math.floor ((total_secondes - (jours * 60 * 60 * 24)) / (60 * 60));
+					minutes = Math.floor ((total_secondes - (( jours * 60 * 60 * 24 + heures * 60 * 60))) / 60);
+					secondes = Math.floor(total_secondes - ((jours * 60 * 60 * 24 + heures * 60 * 60 + minutes * 60)));
+					let et = "et";
+					let mot_jour = "jours,";
+					let mot_heure = "heures,";
+					let mot_minute = "minutes,";
+					let mot_seconde = "secondes";
+					if (jours == 0)
+					{
+						jours = '';
+						mot_jour ='';
+					}
+					else if (jours == 1)
+					{
+						mot_jour = "jour,";
+					}
+					if (heures == 0)
+					{
+						heures = '';
+						mot_heure = '';
+					}
+					else if (heures == 1)
+					{
+						mot_heure = "heure,";
+					}
+					if ( minutes == 0)
+					{
+						minutes = '';
+						mot_minute = '';
+					}
+					else if (minutes == 1)
+					{
+						mot_minute = "minute,";
+					}
+					if ( secondes == 0)
+					{
+						secondes = '';
+						mot_seconde = '';
+						et = '';
+					}
+					else if (secondes == 1)
+					{
+						mot_seconde = " seconde";
+					}
+					if (minutes == 0 && heures == 0 && jours == 0)
+					{
+						et = "";
+					}
+					compte_a_rebours.innerHTML = prefixe + jours + ' ' + mot_jour + ' ' + heures + ' ' + mot_heure + ' ' + minutes + ' ' + mot_minute + ' ' + et + ' ' + secondes + ' ' + mot_seconde;
+				}
+				else
+				{
+					compte_a_rebours.innerHTML = 'compte à rebours terminé.';
+				}
+				let actualisation = setTimeout ("compte_a_rebours();", 1000);
+				}
+				compte_a_rebours();
+				</script>
 
-# Header 1
-## Header 2
-### Header 3
+				<div class="calendar-wrap">
+					<div class="calendar">
+						<div class="cube" data-bg-color="#1c2d3f" data-title="Psaumes"></div>
+						<div class="cube" data-bg-color="#cc0019" data-title="Psaumes"></div>
+						<div class="cube" data-bg-color="#1c2d3f" data-title="Psaumes"></div>
+						<div class="cube" data-bg-color="#cc0019" data-title="Psaumes"></div>
+						<div class="cube" data-bg-color="#1c2d3f" data-title="LPsaumes"></div>
+						<div class="cube" data-bg-color="#cc0019" data-title="Psaumes"></div>
+						<div class="cube" data-bg-color="#1c2d3f" data-title="Psaumes"></div>
+						<div class="cube" data-bg-color="#cc0019" data-title="Psaumes"></div>
+						<div class="cube" data-bg-color="#1c2d3f" data-title="Psaumes"></div>
+						<div class="cube" data-bg-color="#cc0019" data-title="Psaumes"></div>
+						<div class="cube" data-bg-color="#1c2d3f" data-title="Psaumes"></div>
+						<div class="cube" data-bg-color="#cc0019" data-title="Psaumes"></div>
+						<div class="cube" data-bg-color="#1c2d3f" data-title="Psaumes"></div>
+						<div class="cube" data-bg-color="#cc0019" data-title="Psaumes"></div>
+						<div class="cube" data-bg-color="#1c2d3f" data-title="Psaumes"></div>
+						<div class="cube" data-bg-color="#cc0019" data-title="Psaumes"></div>
+						<div class="cube" data-bg-color="#1c2d3f" data-title="Psaumes"></div>
+						<div class="cube" data-bg-color="#cc0019" data-title="Psaumes"></div>
+						<div class="cube" data-bg-color="#1c2d3f" data-title="Psaumes"></div>
+						<div class="cube" data-bg-color="#cc0019" data-title="Psaumes"></div>
+						<div class="cube" data-bg-color="#1c2d3f" data-title="Psaumes"></div>
+						<div class="cube" data-bg-color="#cc0019" data-title="Psaumes"></div>
+						<div class="cube" data-bg-color="#cc0019" data-title="Psaumes"></div>
+						<div class="cube" data-bg-color="#cc0019" data-title="Chrismas times !"></div>
+						<div class="cube" data-bg-color="#1c2d3f" data-title="It's Chrismas"></div>
+					</div>
+					<div class="content">
+						<div class="content__block">
+							<img src="images/sapin.gif" class="Sapingif1" alt="sapingif"/>
+							<h3 class="content__title">Psaumes</h3>
+							<p class="content__description">Heureux l'homme qui ne marche pas selon le conseil des méchants, Qui ne s'arrête pas sur la voie des pécheurs, Et qui ne s'assied pas en compagnie des moqueurs,</p>
+							<p class="content__meta">1.1</p>
+						</div>
+						<div class="content__block">
+							<img src="images/44fa04c7.gif" class="Sapingif1" alt="sapingif"/>
+							<h3 class="content__title">Psaumes</h3>
+							<p class="content__description">Tu ne désires ni sacrifice ni offrande, Tu m'as ouvert les oreilles; Tu ne demandes ni holocauste ni victime expiatoire.</p>
+							<p class="content__meta">40:7</p>
+						</div>
+						<div class="content__block">
+								<img src="images/273.gif" class="Sapingif1" alt="sapingif"/>
+							<h3 class="content__title">Psaumes</h3>
+							<p class="content__description">Offrez des sacrifices de justice, Et confiez-vous à l'Éternel.
+						</p>
+							<p class="content__meta">4.6</p>
+						</div>
+						<div class="content__block">
+								<img src="images/422f2cee.gif" class="Sapingif1" alt="sapingif"/>
+							<h3 class="content__title">Psaumes</h3>
+							<p class="content__description">Éloignez-vous de moi, vous tous qui faites le mal! Car l'Éternel entend la voix de mes larmes;</p>
+							<p class="content__meta">6.9</p>
+						</div>
+						<div class="content__block">
+								<img src="images/1349768.gif" class="Sapingif1" alt="sapingif"/>
+							<h3 class="content__title">Psaumes</h3>
+							<p class="content__description"> Je louerai l'Éternel à cause de sa justice, Je chanterai le nom de l'Éternel, du Très Haut.</p>
+							<p class="content__meta">7:18</p>
+						</div>
+						<div class="content__block">
+								<img src="images/85992434.gif" class="Sapingif1" alt="sapingif"/>
+							<h3 class="content__title">Psaumes</h3>
+							<p class="content__description">On multiplie les idoles, on court après les dieux étrangers: Je ne répands pas leurs libations de sang, Je ne mets pas leurs noms sur mes lèvres.</p>
+							<p class="content__meta">16.4</p>
+						</div>
+						<div class="content__block">
+								<img src="images/bougie.gif" class="Sapingif1" alt="sapingif"/>
+							<h3 class="content__title">Psaumes</h3>
+							<p class="content__description"> Il s'élevait de la fumée dans ses narines, Et un feu dévorant sortait de sa bouche: Il en jaillissait des charbons embrasés.</p>
+							<p class="content__meta">18:9</p>
+						</div>
+						<div class="content__block">
+								<img src="images/christmas24.gif" class="Sapingif1" alt="sapingif"/>
+							<h3 class="content__title">Psaumes</h3>
+							<p class="content__description">Car qui est Dieu, si ce n'est l'Éternel; Et qui est un rocher, si ce n'est notre Dieu?</p>
+							<p class="content__meta">18:32</p>
+						</div>
+						<div class="content__block">
+								<img src="images/christmas74.gif" class="Sapingif1" alt="sapingif"/>
+							<h3 class="content__title">Psaumes</h3>
+							<p class="content__description">Mon Dieu! je crie le jour, et tu ne réponds pas; La nuit, et je n'ai point de repos.</p>
+							<p class="content__meta">22:3</p>
+						</div>
+						<div class="content__block">
+								<img src="images/feu.gif" class="Sapingif1" alt="sapingif"/>
+							<h3 class="content__title">Psaumes</h3>
+							<p class="content__description">Tous les puissants de la terre mangeront et se prosterneront aussi; Devant lui s'inclineront tous ceux qui descendent dans la poussière, Ceux qui ne peuvent conserver leur vie.</p>
+							<p class="content__meta">22:30</p>
+						</div>
+						<div class="content__block">
+								<img src="images/giphy.gif" class="Sapingif1" alt="sapingif"/>
+							<h3 class="content__title">Psaumes</h3>
+							<p class="content__description">Je lave mes mains dans l'innocence, Et je vais autour de ton autel, ô Éternel!</p>
+							<p class="content__meta">26.6</p>
+						</div>
+						<div class="content__block">
+								<img src="images/gthtrh.gif" class="Sapingif1" alt="sapingif"/>
+							<h3 class="content__title">Psaumes</h3>
+							<p class="content__description">Que gagnes-tu à verser mon sang, A me faire descendre dans la fosse? La poussière a-t-elle pour toi des louanges? Raconte-t-elle ta fidélité?</p>
+							<p class="content__meta">30:10</p>
+						</div>
+						<div class="content__block">
+								<img src="images/hfur.gif" class="Sapingif1" alt="sapingif"/>
+							<h3 class="content__title">Psaumes</h3>
+							<p class="content__description">Ceux qui en veulent à ma vie tendent leurs pièges; Ceux qui cherchent mon malheur disent des méchancetés, Et méditent tout le jour des tromperies.</p>
+							<p class="content__meta">38:13</p>
+						</div>
+						<div class="content__block">
+								<img src="images/iui.gif" class="Sapingif1" alt="sapingif"/>
+							<h3 class="content__title">Psaumes</h3>
+							<p class="content__description">Tu as multiplié, Éternel, mon Dieu! Tes merveilles et tes desseins en notre faveur; Nul n'est comparable à toi; Je voudrais les publier et les proclamer, Mais leur nombre est trop grand pour que je les raconte.</p>
+							<p class="content__meta">40:6</p>
+						</div>
+						<div class="content__block">
+								<img src="images/jgff.gif" class="Sapingif1" alt="sapingif"/>
+							<h3 class="content__title">Psaumes</h3>
+							<p class="content__description">Mon âme a soif de Dieu, du Dieu vivant: Quand irai-je et paraîtrai-je devant la face de Dieu?</p>
+							<p class="content__meta">42:3</p>
+						</div>
+						<div class="content__block">
+								<img src="images/jko.gif" class="Sapingif1" alt="sapingif"/>
+							<h3 class="content__title">Psaumes</h3>
+							<p class="content__description">Je rappellerai ton nom dans tous les âges: Aussi les peuples te loueront éternellement et à jamais.</p>
+							<p class="content__meta">45:18</p>
+						</div>
+						<div class="content__block">
+								<img src="images/sapin.gif" class="Sapingif1" alt="sapingif"/>
+							<h3 class="content__title">Psaumes</h3>
+							<p class="content__description">Chantez à Dieu, chantez! Chantez à notre roi, chantez!</p>
+							<p class="content__meta">47:7</p>
+						</div>
+						<div class="content__block">
+								<img src="images/joyeuxnoel.gif" class="Sapingif1" alt="sapingif"/>
+							<h3 class="content__title">Psaumes</h3>
+							<p class="content__description"> Il aura beau s'estimer heureux pendant sa vie, On aura beau te louer des jouissances que tu te donnes,
+							</p>
+							<p class="content__meta">49:19</p>
+						</div>
+						<div class="content__block">
+								<img src="images/oeygty.gif" class="Sapingif1" alt="sapingif"/>
+							<h3 class="content__title">Psaumes</h3>
+							<p class="content__description">Et Dieu dit au méchant: Quoi donc! tu énumères mes lois, Et tu as mon alliance à la bouche,</p>
+							<p class="content__meta">50:16</p>
+						</div>
+						<div class="content__block">
+								<img src="images/oiuytr.gif" class="Sapingif1" alt="sapingif"/>
+							<h3 class="content__title">Psaumes</h3>
+							<p class="content__description">Tu aimes le mal plutôt que le bien, Le mensonge plutôt que la droiture. -Pause.</p>
+							<p class="content__meta">52:5</p>
+						</div>
+						<div class="content__block">
+								<img src="images/rose.gif" class="Sapingif1" alt="sapingif"/>
+							<h3 class="content__title">Psaumes</h3>
+							<p class="content__description">Ce n'est pas un ennemi qui m'outrage, je le supporterais; Ce n'est pas mon adversaire qui s'élève contre moi, Je me cacherais devant lui</p>
+							<p class="content__meta">55:13</p>
+						</div>
+						<div class="content__block">
+								<img src="images/sapinenneige.gif" class="Sapingif1" alt="sapingif"/>
+							<h3 class="content__title">Psaumes</h3>
+							<p class="content__description">Car tu as délivré mon âme de la mort, Tu as garanti mes pieds de la chute, Afin que je marche devant Dieu, à la lumière des vivants.</p>
+							<p class="content__meta">56:14</p>
+						</div>
+						<div class="content__block">
+								<img src="images/snowman.gif" class="Sapingif1" alt="sapingif"/>
+							<h3 class="content__title">Psaumes</h3>
+							<p class="content__description">Toi, Éternel, Dieu des armées, Dieu d'Israël, Lève-toi, pour châtier toutes les nations! N'aie pitié d'aucun de ces méchants infidèles! -Pause</p>
+							<p class="content__meta">59:6</p>
+						</div>
+						<div class="content__block">
+								<img src="images/xa110.gif" class="Sapingif1" alt="sapingif"/>
+							<h3 class="content__title">Psaumes</h3>
+							<p class="content__description">Oui, mon âme, confie-toi en Dieu! Car de lui vient mon espérance.</p>
+							<p class="content__meta">62:6</p>
+						</div>
+						<div class="content__block">
+							<img src="images/sapin.gif" class="Sapingif1" alt="sapingif"/>
+						<h3 class="content__title">It's Chrismas</h3>
+						<p class="content__description">Babe I Love you</p>
+						<p class="content__meta">Paul</p>
+					</div>
+						<div class="content__number">0</div>
+						<button class="btn-back" aria-label="Back to the grid view">&crarr;</button>
+					</div><!-- /content -->
+		</div>
+	</main >
+					<script src="js/charming.min.js"></script>
+		<script src="js/anime.min.js"></script>
+		<script src="js/textfx.js"></script>
+		<script src="js/main3.js"></script>
+</body>
 
-- Bulleted
-- List
+</html>
 
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/Paulmoutieralyon/Paulmoutieralyon.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
